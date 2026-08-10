@@ -1,0 +1,77 @@
+---
+import Rutas from "../layouts/Rutas.astro";
+
+const techGroups = [
+    {
+        title: "Lenguajes",
+        description: "La base de todos mis proyectos, desde la estructura hasta la lógica y la interactividad.",
+        accent: "from-sky-500/20 to-cyan-500/10",
+        textColor: "text-sky-700 dark:text-sky-300",
+        items: ["HTML", "CSS", "JavaScript", "TypeScript", "C#"],
+    },
+    {
+        title: "Frameworks",
+        description: "Tecnologías modernas que me permiten llevar mis proyectos al siguiente nivel.",
+        accent: "from-violet-500/20 to-fuchsia-500/10",
+        textColor: "text-violet-700 dark:text-violet-300",
+        items: ["Astro", "React", "Tailwind CSS", "Express.js"],
+    },
+    {
+        title: "Herramientas",
+        description: "Sistemas y plataformas que me facilitan el desarrollo, despliegue y colaboración.",
+        accent: "from-amber-500/20 to-orange-500/10",
+        textColor: "text-amber-700 dark:text-amber-300",
+        items: ["Node.js", "MongoDB", "MySQL", "Unity", "VS Code", "Git", "GitHub", "Vercel"],
+    },
+];
+---
+
+<Rutas>
+    <main class="relative z-10 min-h-screen px-4 py-18 sm:px-6 lg:px-8 lg:py-24 xl:px-12 2xl:px-60">
+        <section class="mx-auto max-w-6xl">
+            <div class="mb-10 text-center">
+                <p class="text-sm uppercase tracking-[0.36em] text-slate-500 dark:text-slate-400">Tecnologías</p>
+                <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+                    Herramientas que uso para crear experiencias digitales
+                </h1>
+                <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+                    Combino tecnologías modernas y prácticas de desarrollo para construir proyectos visualmente sólidos, rápidos y fáciles de mantener.
+                </p>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-3">
+                {techGroups.map((group) => (
+                    <article class="group rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/80">
+                        <div class={`inline-flex rounded-xl bg-linear-to-br ${group.accent} px-4 py-2 ${group.textColor}`}>
+                            <h2 class="text-lg font-semibold">{group.title}</h2>
+                        </div>
+                        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                            {group.description}
+                        </p>
+                        <ul class="mt-6 flex flex-wrap gap-2">
+                            {group.items.map((item) => (
+                                <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition duration-200 group-hover:border-slate-300 group-hover:bg-white dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:group-hover:bg-slate-800">
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </article>
+                ))}
+            </div>
+
+            <div class="mt-10 rounded-3xl border border-slate-200 bg-slate-950/95 p-8 text-white shadow-[0_24px_80px_-32px_rgba(15,23,42,0.45)] dark:border-slate-700">
+                <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <h2 class="text-xl uppercase tracking-[0.3em] text-sky-300">Enfoque</h2>
+                        <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-100">
+                            Actualmente mi enfoque principal es el desarrollo web, pero también me interesa la creación de videojuegos y aplicaciones interactivas. Busco siempre aprender nuevas tecnologías y mejorar mis habilidades para ofrecer soluciones eficientes y atractivas.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-slate-100">
+                        Stack actual: Astro + React + TypeScript + Tailwind
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Rutas>

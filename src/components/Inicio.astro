@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import { Image } from 'astro:assets';
+import portada from '../assets/portada.png';
+import { BriefcaseBusiness, Bot, User, Phone } from '@lucide/astro';
+---
+
+<div class="min-h-screen w-full px-4 py-18 sm:px-6 lg:py-0 lg:px-8 xl:px-12 2xl:px-20">
+    <div class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col items-center justify-center gap-8 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+        <div class="order-2 flex w-full flex-col items-center justify-center gap-6 text-center lg:order-1 lg:items-start lg:text-left">
+            <div class="flex max-w-2xl flex-col gap-4 text-gray-800 dark:text-white sm:gap-6 fade-from-top">
+                <h1 class="text-4xl font-tech sm:text-5xl lg:text-6xl">
+                    Hola, soy <span id="hero-name" class="block text-sky-600 dark:text-sky-400 sm:inline">Jamir Castilla</span>
+                </h1>
+                <p class="text-base leading-7 text-gray-700 dark:text-gray-300 sm:text-lg">
+                    Soy un programador dedicado al desarrollo de aplicaciones web y videojuegos utilizando lenguajes y tecnologías como TypeScript, ExpressJS, Astro, React, MongoDB, MySQL, C# y otros. Actualmente estudio Ingeniería de Sistemas y también estudié ingeniería física.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 justify-center gap-3 sm:gap-4 lg:justify-start fade-from-top fade-delay-sm">
+                <a href="Proyectos" class="boton inline-flex w-full items-center justify-center rounded-xl border border-gray-300/80 bg-white/90 px-5 py-3 text-sm font-semibold text-gray-950 shadow-sm transition-all duration-200 hover:text-white hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/90 dark:text-gray-100 dark:hover:text-gray-950 dark:focus:ring-offset-gray-950 sm:w-auto"> <span class="flex flex-row gap-3"> <BriefcaseBusiness/> Proyectos </span></a>
+                <a href="Tecnologias" class="boton inline-flex w-full items-center justify-center rounded-xl border border-gray-300/80 bg-white/90 px-5 py-3 text-sm font-semibold text-gray-950 shadow-sm transition-all duration-200 hover:text-white hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/90 dark:text-gray-100 dark:hover:text-gray-950 dark:focus:ring-offset-gray-950 sm:w-auto"> <span class="flex flex-row gap-3"> <Bot/> Tecnologías </span></a>
+                <a href="Sobremi" class="boton inline-flex w-full items-center justify-center rounded-xl border border-gray-300/80 bg-white/90 px-5 py-3 text-sm font-semibold text-gray-950 shadow-sm transition-all duration-200 hover:text-white hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/90 dark:text-gray-100 dark:hover:text-gray-950 dark:focus:ring-offset-gray-950 sm:w-auto"> <span class="flex flex-row gap-3"> <User /> Sobre mí </span></a>
+                <a href="Contacto" class="boton inline-flex w-full items-center justify-center rounded-xl border border-gray-300/80 bg-white/90 px-5 py-3 text-sm font-semibold text-gray-950 shadow-sm transition-all duration-200 hover:text-white hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/90 dark:text-gray-100 dark:hover:text-gray-950 dark:focus:ring-offset-gray-950 sm:w-auto"> <span class="flex flex-row gap-3"> <Phone /> Contacto </span></a>
+            </div>
+        </div>
+        <div class="order-1 flex w-full items-center justify-center lg:order-2 fade-from-top fade-delay-md">
+            <div class="relative w-full max-w-105 overflow-hidden rounded-3xl shadow-[0_32px_90px_rgba(15,23,42,0.24)] backdrop-blur-xl transition-transform duration-500 hover:-translate-y-1 sm:max-w-120 lg:max-w-135">
+                <div class="pointer-events-none absolute inset-0 bg-linear-to-br from-sky-400/10 via-transparent to-violet-500/5"></div>
+                <Image src={portada} alt="portada" class="relative h-auto w-full rounded-3xl object-cover shadow-2xl" />
+            </div>
+        </div>
+    </div>
+</div>

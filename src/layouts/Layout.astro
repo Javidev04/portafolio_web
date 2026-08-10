@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import CambiarFondo from "../components/CambiarFondo";
+import Canvas from "../components/Canvas.astro";
+import {ClientRouter} from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Jamir Castilla</title>
+		<ClientRouter />
+	</head>
+	<body class="relative min-h-screen bg-white text-gray-900 transition-colors duration-300 dark:bg-black dark:text-white">
+		<div class="relative z-10 min-h-screen" id="principal">
+			<div class="absolute right-4 top-4 z-20 sm:right-6 sm:top-6 lg:right-8 lg:top-8">
+				<div class="relative rounded-full bg-white/70 p-1 shadow-sm backdrop-blur dark:bg-black/30">
+					<CambiarFondo  client:load/>
+				</div>
+			</div>
+			<slot />
+		</div>
+		<Canvas/>
+	</body>
+</html>
+	<script src="../scripts/anime.ts"></script>
+	<script is:inline src="../../scripts/the_particles.min.js"></script>
+	<script is:inline src="../../scripts/particles.js"></script>

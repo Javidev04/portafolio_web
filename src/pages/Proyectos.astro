@@ -1,0 +1,85 @@
+---
+import Rutas from "../layouts/Rutas.astro";
+import { Image } from 'astro:assets';
+import proyecto1 from '../assets/proyectos/proyect1.png'
+import proyecto2 from '../assets/proyectos/proyect2.png'
+import proyecto3 from '../assets/proyectos/proyect3.png'
+---
+
+<Rutas>
+    <div class="relative z-10 min-h-screen w-full px-4 py-18 sm:px-6 lg:py-24 lg:px-8 xl:px-12 2xl:px-60">
+        <div class="mb-10 max-w-4xl text-center md:max-w-full">
+            <p class="text-sm uppercase tracking-[0.36em] text-slate-500 dark:text-slate-400">Proyectos</p>
+            <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+                Trabajos recientes
+            </h1>
+            <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+                Desde el diseño de interfaces hasta la optimizacion del rendimiento, cada proyecto es una oportunidad para aprender y mejorar mis habilidades.
+            </p>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            <article class="flex flex-col justify-between group overflow-hidden rounded-2xl border border-slate-200 bg-white/85 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] transition duration-500 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg dark:border-slate-600 dark:bg-slate-900/95 dark:shadow-[0_24px_80px_-32px_rgba(0,0,0,0.55)]">
+                        <div class="overflow-hidden bg-slate-100 transition duration-500 group-hover:bg-slate-200 dark:bg-slate-900 dark:group-hover:bg-slate-800">
+                            <Image src={proyecto1} alt="Proyecto1" class="h-70 w-full object-cover transition duration-500 group-hover:scale-105"/>
+                        </div>
+                    <div class="px-8 py-6">
+                            <h2 class="text-center text-2xl font-semibold text-slate-950 transition duration-300 group-hover:text-sky-700 dark:text-slate-100 dark:group-hover:text-sky-300">Blog</h2>
+                            <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                                Un blog moderno y responsivo con dos tipos de entradas para blog y un buscador de entradas por categorias. Incluye un panel de adminitracion de entradas y categorias a traves de Wordpress Headless.
+                            </p>
+                            <ul class="grid grid-cols-2 gap-2 mt-6 text-sm text-slate-600 dark:text-slate-400">
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500"></span>Astro</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500"></span>Typescript</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500"></span>React</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500"></span>Wordpress Headless</li>
+                            </ul>
+                    </div>
+                        <a href="https://blog-astro-javi.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center bg-sky-600 px-4 py-4 text-ms font-semibold text-white transition duration-300 group-hover:bg-sky-700 dark:bg-slate-800 dark:text-white dark:group-hover:bg-slate-700">
+                            Ver proyecto
+                        </a>
+            </article>
+
+            <article class="flex flex-col justify-between group overflow-hidden rounded-2xl border border-slate-200 bg-white/85 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] transition duration-500 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg dark:border-slate-600 dark:bg-slate-900/95 dark:shadow-[0_24px_80px_-32px_rgba(0,0,0,0.55)]">
+                        <div class="overflow-hidden bg-slate-100 transition duration-500 group-hover:bg-slate-200 dark:bg-slate-900 dark:group-hover:bg-slate-800">
+                            <Image src={proyecto2} alt="Proyecto1" class="h-70 w-full object-cover transition duration-500 group-hover:scale-105"/>
+                        </div>
+                    <div class="px-8 py-6">
+                            <h2 class="text-center text-2xl font-semibold text-slate-950 transition duration-300 group-hover:text-sky-700 dark:text-slate-100 dark:group-hover:text-sky-300">Landing page pizzeria</h2>
+                            <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                                Landing page hecha con tecnologia Astro moderna que permite una carga rapida y una experiencia de usuario fluida. Incluye un formulario de contacto y un carrito de compras simple.
+                            </p>
+                            <ul class="grid grid-cols-2 gap-2 mt-6 text-sm text-slate-600 dark:text-slate-400">
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-red-600"></span>Astro</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-red-600"></span>Typescript</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-red-600"></span>Tailwind</li>
+                            </ul>
+                    </div>
+                        <a href="https://landing-page-pizzeria-silk.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center bg-sky-600 px-4 py-4 text-ms font-semibold text-white transition duration-300 group-hover:bg-sky-700 dark:bg-slate-800 dark:text-white dark:group-hover:bg-slate-700">
+                            Ver proyecto
+                        </a>
+            </article>
+
+            <article class="flex flex-col justify-between group overflow-hidden rounded-2xl border border-slate-200 bg-white/85 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] transition duration-500 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg dark:border-slate-600 dark:bg-slate-900/95 dark:shadow-[0_24px_80px_-32px_rgba(0,0,0,0.55)]">
+                        <div class="overflow-hidden bg-slate-100 transition duration-500 group-hover:bg-slate-200 dark:bg-slate-900 dark:group-hover:bg-slate-800">
+                            <Image src={proyecto3} alt="Proyecto1" class="h-70 w-full object-cover transition duration-500 group-hover:scale-105"/>
+                        </div>
+                    <div class="px-8 py-6">
+                            <h2 class="text-center text-2xl font-semibold text-slate-950 transition duration-300 group-hover:text-sky-700 dark:text-slate-100 dark:group-hover:text-sky-300">Rawaifu</h2>
+                            <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                                Aplicacion web para puntuar personajes a traves de un sistema de votacion aleatoria. Incluye una tabla general que permite ver los cambios de las puntuaciones en tiempo real. Incluye una base de datos hecha en MongoDB.
+                            </p>
+                            <ul class="grid grid-cols-2 gap-2 mt-6 text-sm text-slate-600 dark:text-slate-400">
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400"></span>React</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400"></span>Typescript</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400"></span>Express</li>
+                                <li class="flex items-center gap-2"><span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400"></span>Mongodb</li>
+                            </ul>
+                    </div>
+                        <a href="https://rawaifu.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center bg-sky-600 px-4 py-4 text-ms font-semibold text-white transition duration-300 group-hover:bg-sky-700 dark:bg-slate-800 dark:text-white dark:group-hover:bg-slate-700">
+                            Ver proyecto
+                        </a>
+            </article>
+        </div>
+    </div>
+</Rutas>

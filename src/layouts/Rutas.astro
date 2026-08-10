@@ -1,0 +1,114 @@
+---
+import "../styles/global.css";
+import CambiarFondo from "../components/CambiarFondo";
+import Canvas from "../components/Canvas.astro";
+import {ClientRouter} from 'astro:transitions';
+import {Menu} from '@lucide/astro';
+
+const menuItems = [
+	{ label: "Inicio", href: "/" },
+	{ label: "Proyectos", href: "/Proyectos" },
+	{ label: "Tecnologias", href: "/Tecnologias" },
+	{ label: "Sobre mi", href: "/Sobremi" },
+	{ label: "Contacto", href: "/Contacto" },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const currentHash = Astro.url.hash.replace("#", "");
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Jamir Castilla</title>
+		<ClientRouter />
+		<style>
+			.mobile-menu {
+				max-height: 0;
+				opacity: 0;
+				overflow: hidden;
+				pointer-events: none;
+				transform: translateY(-0.5rem);
+				transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.3s ease;
+			}
+
+			.mobile-menu.open {
+				max-height: 20rem;
+				opacity: 1;
+				pointer-events: auto;
+				transform: translateY(0);
+			}
+
+			@media (min-width: 768px) {
+				.mobile-menu {
+					max-height: none !important;
+					opacity: 1 !important;
+					overflow: visible !important;
+					pointer-events: auto !important;
+					transform: none !important;
+				}
+			}
+		</style>
+	</head>
+	<body class="min-h-screen bg-white text-gray-900 transition-colors duration-300 dark:bg-black dark:text-white">
+		<div class="z-100 min-h-screen" id="principal">
+			<div class="flex p-5 items-center justify-end w-full">
+				<div class="flex gap-3 rounded-full bg-white/70 p-1 shadow-sm backdrop-blur dark:bg-black/30">
+					<CambiarFondo  client:load/>
+					<button
+						type="button"
+						id="menu-toggle"
+						class="rounded-full text-gray-800 transition-colors hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-800 md:hidden"
+						aria-label="Abrir menú"
+						aria-expanded="false"
+						aria-controls="menu"
+					>
+						<Menu />
+					</button>
+				</div>
+                 
+			</div>
+			<div class="z-20 w-full align-center px-4 mobile-menu md:px-0" id="menu">
+				<div class="rounded-2xl border border-gray-200/80 bg-white/90 p-3 shadow-lg backdrop-blur dark:border-white/10 dark:bg-black/60 md:bg-transparent md:border-transparent md:p-0 md:shadow-none md:dark:bg-transparent md:dark:border-transparent">
+					<ul class="flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-3">
+						{menuItems.map((item) => {
+							const isActive = item.href === "/"
+								? currentPath === "/" && !currentHash
+								: item.href.startsWith("/#")
+									? currentHash === item.href.replace("/#", "")
+									: currentPath === item.href;
+
+							return (
+								<li>
+									<a
+										href={item.href}
+										class:list={[
+											"flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200",
+											isActive
+												? " bg-sky-600 text-white shadow-md"
+												: "text-gray-700 hover:bg-gray-100 hover:text-sky-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-sky-300",
+										]}
+										aria-current={isActive ? "page" : undefined}
+									>
+										<span>{item.label}</span>
+									</a>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			</div>
+			<slot />
+		</div>
+        <Canvas/>
+	</body>
+</html>
+	<script src="../scripts/anime.ts"></script>
+	<script src="../scripts/navBar.ts"></script>
+	<script is:inline src="../../scripts/the_particles.min.js"></script>
+	<script is:inline src="../../scripts/particles.js"></script>
