@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
 import { Image } from 'astro:assets';
-import portada from '../assets/portada.jpeg';
+import portadaDia from '../assets/portada.png';
+import portadaNoche from '../assets/portada.jpeg';
 import { BriefcaseBusiness, Bot, User, Phone } from '@lucide/astro';
 ---
 
@@ -26,7 +27,17 @@ import { BriefcaseBusiness, Bot, User, Phone } from '@lucide/astro';
         <div class="order-1 flex w-full items-center justify-center lg:order-2 fade-from-top fade-delay-md">
             <div class="relative w-full max-w-105 overflow-hidden rounded-3xl shadow-[0_32px_90px_rgba(15,23,42,0.24)] backdrop-blur-xl transition-transform duration-500 hover:-translate-y-1 sm:max-w-120 lg:max-w-135">
                 <div class="pointer-events-none absolute inset-0 bg-linear-to-br from-sky-400/10 via-transparent to-violet-500/5"></div>
-                <Image src={portada} alt="portada" class="relative h-auto w-full rounded-3xl object-cover shadow-2xl" />
+                <Image
+                    src={portadaDia}
+                    alt="Portada de Jamir Castilla"
+                    class="relative h-auto w-full rounded-3xl object-cover shadow-2xl transition-opacity duration-700 ease-in-out dark:opacity-0"
+                />
+                <Image
+                    src={portadaNoche}
+                    alt=""
+                    aria-hidden="true"
+                    class="absolute inset-0 h-full w-full rounded-3xl object-cover shadow-2xl opacity-0 transition-opacity duration-700 ease-in-out dark:opacity-100"
+                />
             </div>
         </div>
     </div>

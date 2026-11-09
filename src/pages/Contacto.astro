@@ -3,46 +3,46 @@ import Rutas from "../layouts/Rutas.astro";
 ---
 
 <Rutas>
-  <main class="min-h-[calc(100vh-5rem)] px-4 py-10 sm:px-6 lg:px-10">
-    <div class="relative z-10 mx-auto grid max-w-4xl gap-10 rounded-4xl border border-slate-200/80 bg-white/80 p-8 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-black/60 md:grid-cols-[10fr_1fr]">
-      <section class="space-y-6">
+  <main class="min-h-[calc(100vh-5rem)] w-full px-3 py-10 sm:px-6 lg:px-10">
+    <div class="relative z-10 mx-auto grid w-full max-w-4xl min-w-0 gap-10 rounded-4xl border border-slate-200/80 bg-white/80 p-4 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-black/60 sm:p-8 md:grid-cols-[minmax(0,10fr)_minmax(0,1fr)]">
+      <section class="min-w-0 space-y-6">
         <div>
           <p class="text-sm uppercase tracking-[0.32em] text-sky-600">Contacto</p>
           <h1 class="mt-2 text-4xl font-semibold text-slate-900 dark:text-white sm:text-5xl">Escríbeme un mensaje</h1>
         </div>
 
-        <form class="space-y-6" action="https://formspree.io/f/xnppogaw" method="POST">
+        <form class="w-full min-w-0 space-y-6" action="https://formspree.io/f/xnppogaw" method="POST">
           <div class="grid gap-4 sm:grid-cols-2">
-            <label class="flex flex-col text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label class="flex min-w-0 flex-col text-sm font-medium text-slate-700 dark:text-slate-200">
               Nombre
               <input
                 name="name"
                 type="text"
                 placeholder="Tu nombre"
                 required
-                class="mt-2 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-900/30"
+                class="mt-2 block w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-900/30"
               />
             </label>
-            <label class="flex flex-col text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label class="flex min-w-0 flex-col text-sm font-medium text-slate-700 dark:text-slate-200">
               Email
               <input
                 name="email"
                 type="email"
                 placeholder="correo@ejemplo.com"
                 required
-                class="mt-2 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-900/30"
+                class="mt-2 block w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-900/30"
               />
             </label>
           </div>
 
-          <label class="flex flex-col text-sm font-medium text-slate-700 dark:text-slate-200">
+          <label class="flex min-w-0 flex-col text-sm font-medium text-slate-700 dark:text-slate-200">
             Mensaje
             <textarea
               name="message"
               rows="6"
               placeholder="Escribe tu mensaje aquí..."
               required
-              class="mt-2 resize-none rounded-2xl border border-slate-300 bg-slate-50 px-4 py-4 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-900/30"
+              class="mt-2 block w-full min-w-0 max-w-full resize-none rounded-2xl border border-slate-300 bg-slate-50 px-4 py-4 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:border-sky-400 dark:focus:ring-sky-900/30"
             ></textarea>
           </label>
 
